@@ -15,7 +15,7 @@ app = FastAPI()
 # Allow requests from your frontend (adjust the origin if needed)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # frontend dev server
+    allow_origins=["https://fin-sprint-en2l.vercel.app/"],  # frontend dev server
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
