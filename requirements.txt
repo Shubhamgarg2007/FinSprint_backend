@@ -6,3 +6,6 @@ python-jose
 requests
 python-multipart
 fastapi[all]
+google-generativeai
+jspdf
+jspdf-autotable
