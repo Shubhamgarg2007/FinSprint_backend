@@ -34,16 +34,14 @@ class ExpenseOut(ExpenseRequest):
 
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=ExpenseOut)
 async def create_expense(
-        expense_request: ExpenseRequest,
-        user_id: str = Depends(verify_token),
-        db: Session = Depends(get_db)
+    expense_request: ExpenseRequest,
+    db: Session = Depends(get_db)
 ):
-    new_expense = Expenses(**expense_request.model_dump(), user_id=user_id)
+    new_expense = Expenses(**expense_request.model_dump(), user_id="debug_user")
     db.add(new_expense)
     db.commit()
     db.refresh(new_expense)
     return new_expense
-
 
 # Get all expenses
 @router.get("/", response_model=List[ExpenseOut])
