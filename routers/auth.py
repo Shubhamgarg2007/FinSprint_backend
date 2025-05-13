@@ -10,8 +10,8 @@ router = APIRouter()
 # Clerk Config - Replace these
 CLERK_ISSUER = "https://fun-dogfish-60.clerk.accounts.dev"  # Ensure this is the correct issuer
 JWKS_URL = f"{CLERK_ISSUER}/.well-known/jwks.json"
-AUTHORIZED_PARTIES = ["http://localhost:5173"]  # Replace with your authorized parties
-AUDIENCE = "http://localhost:5173"  # Replace with your front-end URL or client ID
+AUTHORIZED_PARTIES = ["https://fin-sprint.vercel.app"]  # Replace with your authorized parties
+AUDIENCE = "https://fin-sprint.vercel.app"  # Replace with your front-end URL or client ID
 
 # Load JWKS from Clerk
 try:
